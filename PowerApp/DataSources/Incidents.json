@@ -1,0 +1,53 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+    "CdpRevision": {
+      "BaseUrl": "/",
+      "LastChangedTimeString": "2023-06-01T21:29:02.0400000Z",
+      "RevisionNumber": 1
+    },
+    "ConnectedDataSourceInfoNameMapping": {
+      "{Attachments}": "Attachments",
+      "{Attachments}@odata.type": "{Attachments} ({Attachments}@odata.type)",
+      "{FilenameWithExtension}": "File name with extension",
+      "{FullPath}": "Full Path",
+      "{HasAttachments}": "Has attachments",
+      "{Identifier}": "Identifier",
+      "{IsFolder}": "IsFolder",
+      "{Link}": "Link to item",
+      "{ModerationComment}": "Comments associated with the content approval of this list item",
+      "{ModerationStatus}": "Content approval status",
+      "{Name}": "Name ({Name})",
+      "{Path}": "Folder path",
+      "{Thumbnail}": "Thumbnail",
+      "{TriggerWindowEndToken}": "Trigger Window End Token",
+      "{TriggerWindowStartToken}": "Trigger Window Start Token",
+      "{VersionNumber}": "Version number",
+      "Author": "Created By",
+      "Author#Claims": "Created By Claims",
+      "Branch": "Branch",
+      "Branch#Id": "Branch Id",
+      "ComplianceAssetId": "Compliance Asset Id",
+      "Contact_x0020_Number_x002f_Email": "Contact Number/Email",
+      "Created": "Created",
+      "Date_x002f_Time_x0020_of_x0020_R": "Date/Time of Report",
+      "Editor": "Modified By",
+      "Editor#Claims": "Modified By Claims",
+      "ID": "ID",
+      "Incident_x0020_Details": "Incident Details",
+      "Modified": "Modified",
+      "Name": "Name",
+      "Notes_x002f_Additional_x0020_Inf": "Notes/Additional Information",
+      "OData__ColorTag": "Color Tag",
+      "Title": "Information Triaged to",
+      "Type_x0020_of_x0020_Incident": "Type of Incident",
+      "Type_x0020_of_x0020_Incident#Id": "Type of Incident Id"
+    },
+    "DatasetName": "https://ontariogov-my.sharepoint.com/personal/haroon_chughtai_ontario_ca",
+    "EncodeDataset": true,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "Name": "Incidents",
+    "Type": "ConnectedDataSourceInfo"
+  }
+]

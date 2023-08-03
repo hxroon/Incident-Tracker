@@ -1,0 +1,284 @@
+"BrowseScreen1 As screen.'phoneBrowseLayout_ver3.0'":
+    Fill: =SortByColumns(Search(Incidents, TextSearchBox1.Text, "Title"), "Title", If(SortDescending1, SortOrder.Descending, SortOrder.Ascending)
+    LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
+
+    RectQuickActionBar1 As rectangle:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        Fill: =RGBA(0, 120, 212, 1)
+        Height: =88
+        Width: =Parent.Width
+        ZIndex: =1
+
+    LblAppName1 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledColor: =RGBA(161, 159, 157, 1)
+        Fill: =RGBA(58, 58, 58, 0)
+        Font: =Font.'Segoe UI'
+        Height: =88
+        Size: =27
+        Text: ="Incidents"
+        Width: =Parent.Width - Self.X - IconSortUpDown1.Width - IconNewItem1.Width - IconRefresh1.Width
+        Wrap: =false
+        X: =20
+        ZIndex: =2
+
+    IconRefresh1 As icon.Reload:
+        AccessibleLabel: =Self.Tooltip
+        BorderColor: =RGBA(0, 0, 0, 0)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(225, 223, 221, 1)
+        Height: =88
+        Icon: =Icon.Reload
+        OnSelect: =Refresh([@Incidents])
+        PaddingBottom: =22
+        PaddingLeft: =22
+        PaddingRight: =22
+        PaddingTop: =22
+        PressedFill: =RGBA(0, 0, 0, 0)
+        TabIndex: =0
+        Tooltip: ="Refresh list"
+        Width: =88
+        X: =402
+        ZIndex: =3
+
+    IconSortUpDown1 As icon.ArrowsUpDown:
+        AccessibleLabel: =Self.Tooltip
+        BorderColor: =RGBA(0, 0, 0, 0)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(225, 223, 221, 1)
+        Height: =88
+        Icon: =Icon.Sort
+        OnSelect: |-
+            =UpdateContext({SortDescending1: !SortDescending1})
+        PaddingBottom: =26
+        PaddingLeft: =26
+        PaddingRight: =26
+        PaddingTop: =26
+        PressedFill: =RGBA(0, 0, 0, 0)
+        TabIndex: =0
+        Tooltip: =If(SortDescending1, "Sort list in reverse alphabetical order", "Sort list in alphabetical order")
+        Width: =88
+        X: =478
+        ZIndex: =4
+
+    IconNewItem1 As icon.Add:
+        AccessibleLabel: =Self.Tooltip
+        BorderColor: =RGBA(0, 0, 0, 0)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(225, 223, 221, 1)
+        DisplayMode: =If(DataSourceInfo([@Incidents], DataSourceInfo.CreatePermission), DisplayMode.Edit, DisplayMode.Disabled)
+        Height: =88
+        Icon: =Icon.Add
+        OnSelect: =NewForm(EditForm1);Navigate(EditScreen1, ScreenTransition.None)
+        PaddingBottom: =24
+        PaddingLeft: =24
+        PaddingRight: =24
+        PaddingTop: =24
+        PressedFill: =RGBA(0, 0, 0, 0)
+        TabIndex: =0
+        Tooltip: ="Create new item"
+        Width: =88
+        X: =Parent.Width - Self.Width
+        ZIndex: =5
+
+    TextSearchBox1 As text:
+        BorderColor: =RGBA(245, 245, 245, 1)
+        BorderThickness: =2
+        Color: =RGBA(50, 49, 48, 1)
+        Default: =""
+        DelayOutput: =true
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(161, 159, 157, 1)
+        DisabledFill: =RGBA(242, 242, 241, 0)
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        Height: =68
+        HintText: ="Search items"
+        HoverBorderColor: =RGBA(16, 110, 190, 1)
+        HoverColor: =RGBA(50, 49, 48, 1)
+        HoverFill: =RGBA(255, 255, 255, 1)
+        PaddingLeft: =70
+        PressedBorderColor: =RGBA(0, 120, 212, 1)
+        PressedColor: =RGBA(50, 49, 48, 1)
+        PressedFill: =RGBA(255, 255, 255, 1)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =21
+        Width: =640
+        Y: =RectQuickActionBar1.Height
+        ZIndex: =6
+
+    SearchIcon1 As icon.Search:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        Color: =RGBA(0, 120, 212, 1)
+        DisabledBorderColor: =RGBA(245, 245, 245, 1)
+        DisabledColor: =RGBA(225, 223, 221, 1)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =Self.Width
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =RGBA(16, 110, 190, 1)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Icon: =Icon.Search
+        PaddingBottom: =14
+        PaddingLeft: =14
+        PaddingRight: =14
+        PaddingTop: =14
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedColor: =RGBA(16, 110, 190, 1)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Tooltip: ="Search"
+        Width: =TextSearchBox1.Height
+        Y: =88
+        ZIndex: =7
+
+    Rectangle11 As rectangle:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        Fill: =RGBA(0, 120, 212, 1)
+        Height: =2
+        Width: =Parent.Width
+        Y: =TextSearchBox1.Y + TextSearchBox1.Height
+        ZIndex: =8
+
+    "BrowseGallery1 As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver5.0'":
+        BorderColor: =RGBA(245, 245, 245, 1)
+        DelayItemLoading: =true
+        Height: =Parent.Height - Self.Y
+        Items: =SortByColumns(Filter([@Incidents], StartsWith(Title, TextSearchBox1.Text)), "Title", If(SortDescending1, SortOrder.Descending, SortOrder.Ascending))
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        OnSelect: =Navigate(DetailScreen1, ScreenTransition.None)
+        ShowScrollbar: =false
+        TemplatePadding: =0
+        TemplateSize: =116
+        Width: =Parent.Width
+        Y: =TextSearchBox1.Y + TextSearchBox1.Height
+        ZIndex: =9
+
+        Title1 As label:
+            Color: =RGBA(50, 49, 48, 1)
+            DisabledColor: =RGBA(161, 159, 157, 1)
+            Font: =Font.'Segoe UI'
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =12
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.'Information Triaged to'
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 86
+            X: =16
+            Y: =(Parent.TemplateHeight - (Self.Size*1.8 + Subtitle1.Size*1.8 + 2 + Body1.Size*1.8)) / 2
+            ZIndex: =1
+
+        Subtitle1 As label:
+            Color: =RGBA(96, 94, 92, 1)
+            DisabledColor: =RGBA(161, 159, 157, 1)
+            Font: =Font.'Segoe UI'
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =12
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: =ThisItem.'Date/Time of Report'
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Title1.Width
+            X: =Title1.X
+            Y: =Title1.Y + Title1.Height
+            ZIndex: =2
+
+        Body1 As label:
+            Color: =RGBA(96, 94, 92, 1)
+            DisabledColor: =RGBA(161, 159, 157, 1)
+            Font: =Font.'Segoe UI'
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =12
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: =ThisItem.'Type of Incident'.Value
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Title1.Width
+            X: =Title1.X
+            Y: =Subtitle1.Y + Subtitle1.Height
+            ZIndex: =3
+
+        NextArrow1 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Color: =RGBA(166, 166, 166, 1)
+            DisabledBorderColor: =RGBA(245, 245, 245, 1)
+            DisabledColor: =RGBA(225, 223, 221, 1)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Height: =50
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(16, 110, 190, 1)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Icon: =Icon.ChevronRight
+            OnSelect: =Select(Parent)
+            PaddingBottom: =16
+            PaddingLeft: =16
+            PaddingRight: =16
+            PaddingTop: =16
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedColor: =RGBA(16, 110, 190, 1)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Tooltip: ="View item details"
+            Width: =50
+            X: =Parent.TemplateWidth - Self.Width - 12
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =4
+
+        Separator1 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =8
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =108
+            ZIndex: =5
+
+        Rectangle1 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(0, 120, 212, 1)
+            Height: =Parent.TemplateHeight - Separator1.Height
+            OnSelect: =Select(Parent)
+            Visible: =If(ThisItem.IsSelected, true, false)
+            Width: =4
+            ZIndex: =6
+
+    Icon2 As icon.Mail:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(245, 245, 245, 1)
+        DisabledColor: =RGBA(225, 223, 221, 1)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =55
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Icon: =Icon.Mail
+        OnSelect: =Navigate(Screen1)
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedColor: =RGBA(16, 110, 190, 1)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Width: =52
+        X: =335
+        Y: =16
+        ZIndex: =10
+

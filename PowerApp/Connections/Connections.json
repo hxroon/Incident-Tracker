@@ -1,0 +1,55 @@
+{
+  "1971a671-112d-4949-8cf5-dbf1e8a2b879": {
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/u/shgogna/globalperconnector-train1/1.0.1639.3310/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://ontariogov-my.sharepoint.com/personal/haroon_chughtai_ontario_ca": {
+        "dataSources": {
+          "Incidents": {
+            "tableName": "4b03f8cc-1559-4db1-9250-4bf354458159"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Incidents"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "1971a671-112d-4949-8cf5-dbf1e8a2b879"
+  },
+  "3cb3069c-bb5a-4710-ac3e-df68821a365d": {
+    "connectionRef": {
+      "displayName": "Office 365 Users",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1647/1.0.1647.3361/office365users/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365users"
+    },
+    "datasets": {},
+    "dataSources": [
+      "Office365Users"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "3cb3069c-bb5a-4710-ac3e-df68821a365d"
+  },
+  "45f00aee-8b2c-4c85-8207-3890cf524d32": {
+    "connectionRef": {
+      "displayName": "Office 365 Outlook",
+      "iconUri": "https://connectoricons-prod.azureedge.net/u/laborbol/partial-builds/390724148/1.0.1641.3327/office365/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365"
+    },
+    "datasets": {},
+    "dataSources": [
+      "Office365Outlook"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "45f00aee-8b2c-4c85-8207-3890cf524d32"
+  }
+}
