@@ -149,7 +149,7 @@
         BorderColor: =RGBA(245, 245, 245, 1)
         DelayItemLoading: =true
         Height: =Parent.Height - Self.Y
-        Items: =SortByColumns(Filter([@Incidents], StartsWith(Title, TextSearchBox1.Text)), "Title", If(SortDescending1, SortOrder.Descending, SortOrder.Ascending))
+        Items: =SortByColumns(Filter([@Incidents], StartsWith('Information Triaged to', TextSearchBox1.Text)), "Title", If(SortDescending1, SortOrder.Descending, SortOrder.Ascending))
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
         OnSelect: =Navigate(DetailScreen1, ScreenTransition.None)

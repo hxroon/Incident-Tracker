@@ -438,13 +438,13 @@
                 HoverBorderColor: =RGBA(16, 110, 190, 1)
                 HoverColor: =RGBA(50, 49, 48, 1)
                 HoverFill: =RGBA(245, 245, 245, 1)
-                Items: =Choices([@Incidents].Type_x0020_of_x0020_Incident)
+                Items: =Choices([@Incidents].'Type of Incident')
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 PressedBorderColor: =RGBA(16, 110, 190, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(0, 120, 212, 1)
                 SearchFields: =["Value"]
-                SearchItems: =Choices(Incidents.Type_x0020_of_x0020_Incident,DataCardValue5.SearchText)
+                SearchItems: =Choices(Incidents.'Type of Incident',DataCardValue5.SearchText)
                 SelectionFill: =RGBA(0, 120, 212, 1)
                 SelectMultiple: =false
                 Size: =21
